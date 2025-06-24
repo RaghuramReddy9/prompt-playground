@@ -17,5 +17,5 @@ We compare **three core prompt styles** using Google's Gemini 1.5 Flash API.
 ## How to Run:
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/prompt-playground.git
+   git clone https://github.com/RaghuramReddy9/prompt-playground.git
    cd prompt-playground
