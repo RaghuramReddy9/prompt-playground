@@ -7,6 +7,7 @@ We compare **three core prompt styles** using Google's Gemini 1.5 Flash API.
 - **Direct Prompt** – Ask a question plainly
 - **Role-Based Prompt** – Set a persona or expert role
 - **Chain-of-Thought Prompt** – Encourage step-by-step reasoning
+**Few-Shot Prompting** – Teach Gemini with examples (e.g., Informal to Formal Text)
 
 ## Technologies Used:
 - Google Generative AI (Gemini 1.5 Flash)
