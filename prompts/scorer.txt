@@ -1,0 +1,19 @@
+You are an impartial evaluator. Score the following two responses based on:
+- Clarity
+- Helpfulness
+- Tone
+
+Instructions:
+- Compare response A and response B
+- Give a score for each (1 to 5)
+- At the end, declare which one is better
+
+Input:
+{INPUT}
+Response A:
+{A}
+
+Response B:
+{B}
+
+Evaluation:

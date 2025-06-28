@@ -15,6 +15,35 @@ We compare **three core prompt styles** using Google's Gemini 1.5 Flash API.
 - Jupyter Notebook
 - Prompt files (.txt)
 
+
+## Multi-Prompt Evaluation with Gemini (Prompt Scoring)
+
+This experiment compares 3 types of prompts:
+
+- **Direct Prompt**
+- **Role-Based Prompt**
+- **Chain-of-Thought Prompt (CoT)**
+
+Each prompt was used to generate a response about the history of Artificial Intelligence (AI) using the Gemini API.  
+We then used **Gemini itself to evaluate and score the responses** based on:
+
+- Clarity (1 to 5)
+- Helpfulness (1 to 5)
+- Tone (1 to 5)
+
+### Results:
+- **Clarity:** Chain-of-Thought and Direct Prompts scored highest.
+- **Helpfulness:** All prompts struggled to fully address the user's input.
+- **Best Overall:** Chain-of-Thought (CoT) for structure, Direct for readability.
+
+###  What I Learned:
+- How to score prompt outputs using Gemini
+- How to compare multiple prompt types
+- How to automate evaluation in real-world GenAI workflows
+
+> This method can be used in real apps to choose the best prompt for chatbots, summarizers, and assistants.
+
+
 ## How to Run:
 1. Clone the repo:
    ```bash
