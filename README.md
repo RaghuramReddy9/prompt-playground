@@ -7,7 +7,7 @@ We compare **three core prompt styles** using Google's Gemini 1.5 Flash API.
 - **Direct Prompt** – Ask a question plainly
 - **Role-Based Prompt** – Set a persona or expert role
 - **Chain-of-Thought Prompt** – Encourage step-by-step reasoning
-- **Few-Shot Prompting** – Teach Gemini with examples (e.g., Informal to Formal Text)
+**Few-Shot Prompting** – Teach Gemini with examples (e.g., Informal to Formal Text)
 
 ## Technologies Used:
 - Google Generative AI (Gemini 1.5 Flash)
@@ -38,7 +38,10 @@ We then used **Gemini itself to evaluate and score the responses** based on:
 
 ###  What I Learned:
 - How to score prompt outputs using Gemini
-- How to compare multiple prompt types
+- How to compare multiple prompt typesgit add .
+git commit -m "Multi-Prompt Evaluation with Gemini - Prompt Scoring"
+git push origin main
+
 - How to automate evaluation in real-world GenAI workflows
 
 > This method can be used in real apps to choose the best prompt for chatbots, summarizers, and assistants.
@@ -49,3 +52,5 @@ We then used **Gemini itself to evaluate and score the responses** based on:
    ```bash
    git clone https://github.com/RaghuramReddy9/prompt-playground.git
    cd prompt-playground
+
+<pre> prompt-playground/ │ ├── .venv/ ← Python virtual environment ├── .gitignore ├── README.md ├── requirements.txt │ ├── notebooks/ ← Jupyter notebooks │ └── prompt_playground.ipynb │ ├── prompts/ ← All prompt templates │ ├── cot.txt │ ├── direct.txt │ ├── few_shot.txt ← ✅ renamed for consistency │ ├── role_based.txt │ ├── scorer.txt │ └── sentiment_template.txt │ ├── scripts/ ← Python scripts for app logic │ ├── generate_and_score.py │ └── generate_from_template.py └── .env ← API keys (not pushed to GitHub) </pre>
