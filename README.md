@@ -6,11 +6,11 @@ We used Gemini 1.5 Flash to generate and evaluate outputs from:
 - Direct Prompts
 - Role-Based Prompts
 - Chain-of-Thought (CoT) Prompts
+- LangChain PromptTemplate-based Sentiment Classification ✅ (NEW)
 
-Each output was automatically scored by Gemini itself on:
-- Clarity (1–5)
-- Helpfulness (1–5)
-- Tone (1–5)
+Each output was optionally scored by:
+- Gemini itself (self-evaluation)
+- Manual scoring logic (1 = correct, 0 = incorrect)
 
 ---
 
@@ -19,10 +19,12 @@ Each output was automatically scored by Gemini itself on:
 - Compare multiple prompt styles using real-world examples.
 - Automate evaluation scoring with LLMs.
 - Build a reusable playground for testing prompt engineering ideas.
+- Test prompt templates with LangChain and analyze response accuracy.
 
 ---
 
-##  Project Structure
+## 📁Project Structure
+
 prompt-playground/
 │
 ├── .venv/ ← Python virtual environment
@@ -30,60 +32,79 @@ prompt-playground/
 ├── README.md
 ├── requirements.txt
 │
-├── notebooks/ ← Jupyter notebooks
+├── notebooks/
 │ └── prompt_playground.ipynb
 │
-├── prompts/ ← All prompt templates
+├── prompts/
 │ ├── cot.txt
 │ ├── direct.txt
 │ ├── few_shot.txt
 │ ├── role_based.txt
 │ ├── scorer.txt
-│ └── sentiment_template.txt
+│ └── sentiment_template.txt ✅
 │
-├── scripts/ ← Python scripts for app logic
+├── results/
+│ └── sentiment_scores.csv ✅
+│
+├── scripts/
 │ ├── generate_and_score.py
-│ └── generate_from_template.py
+│ └── generate_from_template.py ✅
+│
+├── screenshots/
+│ ├── prompt_outputs.png
+│ └── scoring.png
+│
 └── .env ← API keys (not pushed to GitHub)
 
+## New Module: Sentiment Classification with LangChain + Gemini
+
+This script demonstrates how to:
+- Use `LangChain.PromptTemplate` to fill a structured prompt
+- Send the review to Gemini Flash (1.5)
+- Get predicted sentiment (Positive/Negative)
+- Compare it to expected label
+- Score accuracy (1 = correct, 0 = incorrect)
+- Save all outputs to `sentiment_scores.csv`
+
+### Example Output
+
+```text
+--- Review 1 ---
+Input: The movie was fantastic and had great acting.
+Sentiment: Positive
+Expected: Positive
+Score: 1
+
+✅ Total Score: 3/3
+✅ Accuracy: 100.00%
+
 
 ---
 
-##  Key Learnings
+### 🗂 CSV Result
 
-- Prompt formatting directly affects clarity and relevance of LLM output.
-- Chain-of-Thought prompts often outperform others in clarity.
-- Evaluation can be automated using LLMs for structured feedback.
-- This method can power real-world GenAI tools like chatbots, reviewers, and assistants.
+| Review                                          | Expected | Predicted | Score |
+|--------------------------------------------------|----------|-----------|-------|
+| The movie was fantastic and had great acting.    | Positive | Positive  | 1     |
+| It was boring and I almost fell asleep.          | Negative | Negative  | 1     |
+| The visuals were good, but the plot made no sense.| Negative | Negative  | 1     |
 
 ---
 
-##  How to Run Locally
+## How to Run (for sentiment scoring)
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/RaghuramReddy9/prompt-playground.git
-cd prompt-playground
+# Set up project as usual...
 
-# 2. Set up a virtual environment (optional but recommended)
-python -m venv .venv
-source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+# Run the sentiment classification scoring script
 
-# 3. Install dependencies
-pip install -r requirements.txt
+     python scripts/generate_from_template.py
 
-# 4. Add your Gemini API key to a .env file
-GOOGLE_API_KEY=your_key_here
+     
+## Screenshots
 
-# 5. Run the script
-python scripts/generate_and_score.py
-
-
-### Multi-Prompt Response Examples  
+### Prompt Outputs Example  
 ![Prompt Outputs](screenshots/prompt_outputs.png)
 
-### Gemini Evaluation Scores  
-![Evaluation Results](screenshots/scoring.png)
-
-
-
+### Scoring Table  
+![Scoring Output](screenshots/scoring.png)
