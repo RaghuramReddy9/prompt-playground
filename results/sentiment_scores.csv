@@ -1,0 +1,4 @@
+Review,Expected,Predicted,Score
+The movie was fantastic and had great acting.,Positive,Positive,1
+It was boring and I almost fell asleep.,Negative,Negative,1
+"The visuals were good, but the plot made no sense.",Negative,Negative,1
