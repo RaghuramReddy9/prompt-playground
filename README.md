@@ -6,7 +6,7 @@ We used Gemini 1.5 Flash to generate and evaluate outputs from:
 - Direct Prompts
 - Role-Based Prompts
 - Chain-of-Thought (CoT) Prompts
-- LangChain PromptTemplate-based Sentiment Classification ✅ (NEW)
+- LangChain PromptTemplate-based Sentiment Classification 
 
 Each output was optionally scored by:
 - Gemini itself (self-evaluation)
@@ -103,7 +103,6 @@ Score: 1
 Make sure your .env file includes:
 GEMINI_API_KEY=your_key_here
 
-     
 ## Screenshots
 
 ### Prompt Outputs Example  
