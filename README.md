@@ -100,6 +100,9 @@ Score: 1
 
      python scripts/generate_from_template.py
 
+Make sure your .env file includes:
+GEMINI_API_KEY=your_key_here
+
      
 ## Screenshots
 
