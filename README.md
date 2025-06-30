@@ -6,7 +6,7 @@ We used Gemini 1.5 Flash to generate and evaluate outputs from:
 - Direct Prompts
 - Role-Based Prompts
 - Chain-of-Thought (CoT) Prompts
-- LangChain PromptTemplate-based Sentiment Classification 
+- LangChain PromptTemplate-based Sentiment Classification
 
 Each output was optionally scored by:
 - Gemini itself (self-evaluation)
@@ -23,8 +23,7 @@ Each output was optionally scored by:
 
 ---
 
-## 📁Project Structure
-
+## 📁 Project Structure
 prompt-playground/
 │
 ├── .venv/ ← Python virtual environment
@@ -41,14 +40,14 @@ prompt-playground/
 │ ├── few_shot.txt
 │ ├── role_based.txt
 │ ├── scorer.txt
-│ └── sentiment_template.txt ✅
+│ └── sentiment_template.txt 
 │
 ├── results/
-│ └── sentiment_scores.csv ✅
+│ └── sentiment_scores.csv 
 │
 ├── scripts/
 │ ├── generate_and_score.py
-│ └── generate_from_template.py ✅
+│ └── generate_from_template.py 
 │
 ├── screenshots/
 │ ├── prompt_outputs.png
@@ -56,7 +55,22 @@ prompt-playground/
 │
 └── .env ← API keys (not pushed to GitHub)
 
-## New Module: Sentiment Classification with LangChain + Gemini
+---
+
+
+## 📸 Screenshots
+
+### 🖼️ Prompt Outputs Example  
+![Prompt Outputs](screenshots/prompt_outputs.png)
+
+### 📊 Scoring Table  
+![Scoring Output](screenshots/scoring.png)
+
+
+---
+
+
+## 🆕 New Module: Sentiment Classification with LangChain + Gemini
 
 This script demonstrates how to:
 - Use `LangChain.PromptTemplate` to fill a structured prompt
@@ -66,8 +80,11 @@ This script demonstrates how to:
 - Score accuracy (1 = correct, 0 = incorrect)
 - Save all outputs to `sentiment_scores.csv`
 
-### Example Output
+---
 
+### 🧪 Example Output
+
+```markdown
 ```text
 --- Review 1 ---
 Input: The movie was fantastic and had great acting.
@@ -78,37 +95,15 @@ Score: 1
 ✅ Total Score: 3/3
 ✅ Accuracy: 100.00%
 
+| Review                                             | Expected | Predicted | Score |
+| -------------------------------------------------- | -------- | --------- | ----- |
+| The movie was fantastic and had great acting.      | Positive | Positive  | 1     |
+| It was boring and I almost fell asleep.            | Negative | Negative  | 1     |
+| The visuals were good, but the plot made no sense. | Negative | Negative  | 1     |
 
----
 
-### 🗂 CSV Result
-
-| Review                                          | Expected | Predicted | Score |
-|--------------------------------------------------|----------|-----------|-------|
-| The movie was fantastic and had great acting.    | Positive | Positive  | 1     |
-| It was boring and I almost fell asleep.          | Negative | Negative  | 1     |
-| The visuals were good, but the plot made no sense.| Negative | Negative  | 1     |
-
----
-
-## How to Run (for sentiment scoring)
-
-```bash
 # Set up project as usual...
-
 # Run the sentiment classification scoring script
+python scripts/generate_from_template.py
 
-     python scripts/generate_from_template.py
-
-    Make sure your .env file includes:
-    GEMINI_API_KEY=your_key_here
-
----
-
-## Screenshots
-
-### Prompt Outputs Example  
-![Prompt Outputs](screenshots/prompt_outputs.png)
-
-### Scoring Table  
-![Scoring Output](screenshots/scoring.png)
+----
