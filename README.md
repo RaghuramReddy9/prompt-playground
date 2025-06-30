@@ -58,18 +58,6 @@ prompt-playground/
 ---
 
 
-## 📸 Screenshots
-
-### 🖼️ Prompt Outputs Example  
-![Prompt Outputs](screenshots/prompt_outputs.png)
-
-### 📊 Scoring Table  
-![Scoring Output](screenshots/scoring.png)
-
-
----
-
-
 ## 🆕 New Module: Sentiment Classification with LangChain + Gemini
 
 This script demonstrates how to:
@@ -106,4 +94,15 @@ Score: 1
 # Run the sentiment classification scoring script
 python scripts/generate_from_template.py
 
-----
+```
+
+
+## 📸 Screenshots
+
+### 🖼️ Prompt Outputs Example  
+![Prompt Outputs](screenshots/prompt_outputs.png)
+
+### 📊 Scoring Table  
+![Scoring Output](screenshots/scoring.png)
+
+
