@@ -1,0 +1,8 @@
+You are an action assistant.
+
+Based on the formal report, recommend ONE action: ["Flag", "Escalate", "Thank", "Ignore"]
+
+Formal Report:
+"{REPORT}"
+
+Recommended Action:

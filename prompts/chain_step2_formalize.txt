@@ -1,0 +1,8 @@
+You are a corporate report writer.
+
+Rewrite the given summary in formal and professional tone.
+
+Summary:
+"{SUMMARY}"
+
+Formal Report:

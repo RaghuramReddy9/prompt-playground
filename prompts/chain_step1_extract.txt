@@ -1,0 +1,8 @@
+You are a helpful reviewer assistant.
+
+Extract the key sentiment or issue from the review below.
+
+REVIEW:
+"{REVIEW}"
+
+Summary:
