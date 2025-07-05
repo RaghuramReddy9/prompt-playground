@@ -24,20 +24,20 @@ review_text = "I ordered a new laptop and it arrived with scratches on the scree
 # Step 4: Initialize Gemini model
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-# Step 5: Step 1 – Extract Key Summary
+# Step 5: Extract Key Summary
 extract_prompt = extract_template.replace("{REVIEW}", review_text)
 summary_response = model.generate_content(extract_prompt)
 summary = summary_response.text.strip().replace("Summary:", "").strip()
 print("Step 1 - Summary: ", summary)
 
 
-# Step 6: Step 2 – Formalize Summary
+# Step 6: Formalize Summary
 formal_prompt = formalize_template.replace("{SUMMARY}", summary)
 formal_response = model.generate_content(formal_prompt)
 formal_report = formal_response.text.strip().replace("Formal Report:", "").strip()
 print("Step 2 - Formal Report:",formal_report)
 
-# Step 7: Step 3 – Recommend Action
+# Step 7: Recommend Action
 decision_prompt = decide_template.replace("{REPORT}", formal_report)
 action_response = model.generate_content(decision_prompt)
 action = action_response.text.strip()
